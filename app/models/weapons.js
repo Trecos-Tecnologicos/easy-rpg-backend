@@ -33,6 +33,14 @@ const weaponSchema = new Schema({
             validator : Number.isInteger,
             message   : '{VALUE} is not an integer value'
         }
+    },
+    ammoType: {
+        type: String,
+        required: true,
+    },
+    modificationType: {
+        type: String,
+        required: true,
     }
 
 },{collection:'weapons',timestamps: true});
