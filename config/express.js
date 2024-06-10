@@ -12,6 +12,7 @@ module.exports = () => {
     app.set('port', process.env.PORT || config.get('server.port'));
 
     require('../app/routes/users')(app);
+    require('../app/routes/weapons')(app);
     require('../app/routes/auth')(app);
     require('./db')(app);
 
