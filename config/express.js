@@ -11,8 +11,8 @@ module.exports = () => {
     // SETANDO VARIÁVEIS DA APLICAÇÃO
     app.set('port', process.env.PORT || config.get('server.port'));
 
-    require('../api/routes/users')(app);
-    require('../api/routes/auth')(app);
+    require('../app/routes/users')(app);
+    require('../app/routes/auth')(app);
     require('./db')(app);
 
     return app;
