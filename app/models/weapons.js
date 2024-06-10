@@ -40,7 +40,7 @@ const weaponSchema = new Schema({
     },
     modificationType: {
         type: String,
-        required: true,
+        required: false,
     }
 
 },{collection:'weapons',timestamps: true});
