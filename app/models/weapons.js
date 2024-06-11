@@ -39,8 +39,9 @@ const weaponSchema = new Schema({
         required: true,
     },
     modificationType: {
-        type: String,
-        required: false,
+        type: Schema.Types.ObjectId,
+        ref: "modifications",
+        default: null
     }
 
 },{collection:'weapons',timestamps: true});

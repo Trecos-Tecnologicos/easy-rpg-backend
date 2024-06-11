@@ -1,5 +1,5 @@
 const Weapon = require('../models/weapons')
-const jwt = require("jsonwebtoken");
+const { ObjectId } = require('mongodb');
 
 module.exports = () => {
     const controller = {};
@@ -9,7 +9,9 @@ module.exports = () => {
     };
 
     controller.createWeapon = (req, res) => {
-        Weapon.create(req.body).then((weapon) => res.status(201).send(weapon));
+        const body = req.body;
+        body.modificationId = new ObjectId(req.body.modificationId);
+        Weapon.create(body).then((weapon) => res.status(201).send(weapon));
     };
 
     return controller;

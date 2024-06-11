@@ -13,6 +13,7 @@ module.exports = () => {
 
     require('../app/routes/users')(app);
     require('../app/routes/weapons')(app);
+    require('../app/routes/modifications')(app);
     require('../app/routes/auth')(app);
     require('./db')(app);
 
